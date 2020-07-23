@@ -1,17 +1,14 @@
-version: 2
-
+version: 2.1
+orbs:
+  maven: circleci/maven@0.0.12
 # Define the jobs we want to run for this project
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:8-jdk-stretch
     steps:
       - checkout
       - run: 
         commnad: mvn build
   deploy:
-    docker:
-      - image: circleci/openjdk:8-jdk-stretch
     steps:
       - checkout
       - run: 
