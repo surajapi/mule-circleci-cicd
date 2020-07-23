@@ -9,11 +9,7 @@ jobs:
     steps:
       - checkout
       - run: mvn clean package
-  deploy:
-    docker:
-      - image: circleci/openjdk:8-jdk-stretch
-    steps:
-      - checkout
       - run: mvn deploy -DmuleDeploy 
+      
 
 # Orchestrate our job run sequence
